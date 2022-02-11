@@ -25,14 +25,14 @@ class BaseUser(CreateUpdateDictModel):
     """Base User model."""
 
     id: UUID4 = Field(default_factory=uuid.uuid4)
-    email: EmailStr
+    email: str
     is_active: bool = True
     is_superuser: bool = False
     is_verified: bool = False
 
 
 class BaseUserCreate(CreateUpdateDictModel):
-    email: EmailStr
+    email: str
     password: str
     is_active: Optional[bool] = True
     is_superuser: Optional[bool] = False
